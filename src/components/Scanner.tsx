@@ -9,6 +9,7 @@ import {
   useCameraDevice,
   useCameraFormat,
   useFrameProcessor,
+  useSkiaFrameProcessor,
 } from 'react-native-vision-camera';
 import {Svg, Polygon} from 'react-native-svg';
 import * as DBR from 'vision-camera-dynamsoft-barcode-reader';
@@ -43,7 +44,7 @@ function Scanner(props:ScannerProps): React.JSX.Element {
     { videoAspectRatio: 16 / 9 },
     { photoAspectRatio: 16 / 9 },
     { videoResolution: { width: 1920, height: 1080 } },
-    { fps: 25 },
+    { fps: 60 },
   ]);
   const photoTaken = useRef(false);
 
@@ -258,10 +259,11 @@ function Scanner(props:ScannerProps): React.JSX.Element {
     updateViewBox();
   }, [frameWidth,frameHeight]);
 
-  const frameProcessor = useFrameProcessor((frame) => {
+  const frameProcessor = useSkiaFrameProcessor((frame) => {
     'worklet';
+    frame.render();
     if (takenShared.value == false) {
-      runAtTargetFps(5, () => {
+      runAtTargetFps(2, () => {
         'worklet';
         updateFrameSizeJS(frame.width,frame.height)
         try {
@@ -307,7 +309,6 @@ function Scanner(props:ScannerProps): React.JSX.Element {
             photo={true}
             frameProcessor={frameProcessor}
             pixelFormat="yuv"
-            resizeMode='contain'
           />
           <Svg
             style={StyleSheet.absoluteFill}

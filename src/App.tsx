@@ -41,10 +41,10 @@ function App(): React.JSX.Element {
     });
     (async () => {
       const DBRLicenseResult = await DBR.initLicense(
-        'DLS2eyJoYW5kc2hha2VDb2RlIjoiMTAwMjI3NzYzLVRYbE5iMkpwYkdWUWNtOXFYMlJpY2ciLCJtYWluU2VydmVyVVJMIjoiaHR0cHM6Ly9tbHRzLmR5bmFtc29mdC5jb20iLCJvcmdhbml6YXRpb25JRCI6IjEwMDIyNzc2MyIsInN0YW5kYnlTZXJ2ZXJVUkwiOiJodHRwczovL3NsdHMuZHluYW1zb2Z0LmNvbSIsImNoZWNrQ29kZSI6MTQzODIxODMzfQ==',
+        't0068UwAAALpVKDqg9f8gI1R7ZZhRdntJmCff0GnXDWnOCQ7Z3XN4+fOx1dntaJyDhcWRytNalz6MEiXzz7NDv3SdxLcNs/g=',
       );
       const DDNLicenseResult = await DDN.initLicense(
-        'DLS2eyJoYW5kc2hha2VDb2RlIjoiMTAwMjI3NzYzLVRYbE5iMkpwYkdWUWNtOXEiLCJtYWluU2VydmVyVVJMIjoiaHR0cHM6Ly9tbHRzLmR5bmFtc29mdC5jb20iLCJvcmdhbml6YXRpb25JRCI6IjEwMDIyNzc2MyIsInN0YW5kYnlTZXJ2ZXJVUkwiOiJodHRwczovL3NsdHMuZHluYW1zb2Z0LmNvbSIsImNoZWNrQ29kZSI6LTM5MDUxMjkwOH0=',
+        't0085pwAAAGgN/EGbJKCbbI8gFHYKrFx4zZvBBih6Z/KhUFaQyoOlcWYuMUm7qUVkeeW/jYGVeI4wnvek6SifECSTR0rvTCDadbnWOPw3SsnKIqR0BJMh/g==',
       );
       console.log(DBRLicenseResult);
       console.log(DDNLicenseResult);
